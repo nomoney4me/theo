@@ -64,16 +64,6 @@ export default withRouteData((props) => {
           }
         </Col>
       </Row>
-
-      {/* <p><b>Related Events</b></p>
-      <hr />
-
-
-      <p><b>Verses</b></p>
-      <hr />
-         */}
-
-      {/* <img src={} /> */}
     </Col>
   )
 })

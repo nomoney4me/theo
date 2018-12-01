@@ -20,9 +20,9 @@ export default withRouteData((props) => {
       {/* {JSON.stringify(orderedKeys)} */}
       { Object.values(orderedKeys).map((key, i) => {
           return (
-            <ul>
+            <ul key={i}>
               <h3>{key}</h3>
-              <li key={i} style={{ listStyle: "none" }}>
+              <li style={{ listStyle: "none" }}>
               {
                 unorderedData[key].map((place, i) => {
                   return place.status === "publish"
