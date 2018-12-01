@@ -19,7 +19,7 @@ export default withRouteData((props) => {
     <div className="listItems">
       { sortedKeys.map((key, i) => {
         return <ul key={i}>
-          <h3>{key}</h3>
+          <h3 kye={i}>{key}</h3>
             { groupedData[key].map((person, i) => {
               return <Link to={`/people/person/${person.Person_Lookup}/ `}>
                       {person.Name}

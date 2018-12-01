@@ -19,6 +19,13 @@ const functions = {
         Name
         Person_Lookup
         status
+        Aliases
+        Verses {
+          Osis_Ref
+        }
+        Personal_network
+        Has_Been_to
+        Events
       }
     }
   `
@@ -45,7 +52,6 @@ export default {
     title: 'React Static',
   }),
   getRoutes: async () => {
-    const {data: posts} = await axios.get('https://jsonplaceholder.typicode.com/posts')  
     const { People } = await functions.people()
     const { Places } = await functions.places()
 
@@ -78,24 +84,6 @@ export default {
       {
         path: '/',
         component: 'src/containers/Home',
-      },
-      {
-        path: '/about',
-        component: 'src/containers/About',
-      },
-      {
-        path: '/blog',
-        component: 'src/containers/Blog',
-        getData: () => ({
-          posts,
-        }),
-        children: posts.map(post => ({
-          path: `/post/${post.id}`,
-          component: 'src/containers/Post',
-          getData: () => ({
-            post,
-          }),
-        })),
       },
       {
         is404: true,
