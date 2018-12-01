@@ -34,8 +34,8 @@ export default withRouteData((props) => {
 
         <Col lg={12} style={{ float: "left" }}>
           {place["Has_been_here"]
-            ? place["Has_been_here"].split(',').map(person => {
-              return <Link style={{ display: "inline-block" }} to={`/people/person/${person}`}>{person}</Link>
+            ? place["Has_been_here"].split(',').map((person, i) => {
+              return <Link key={i} style={{ display: "inline-block" }} to={`/people/person/${person}`}>{person}</Link>
             })
             : ""
           }
@@ -57,8 +57,8 @@ export default withRouteData((props) => {
         </Col>
         <Col lg={12} style={{ float: "left" }}>
         { place.Verses
-            ? place.Verses.split(',').map(verse => {
-              return <a style={{ display: "inline-block" }} to={`/passage/verse/${verse}`}>{verse}</a>
+            ? place.Verses.split(',').map((verse, i) => {
+              return <a key={i} style={{ display: "inline-block" }} to={`/passage/verse/${verse}`}>{verse}</a>
             })
             : ""
           }

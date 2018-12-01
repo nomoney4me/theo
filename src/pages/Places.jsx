@@ -18,15 +18,15 @@ export default withRouteData((props) => {
   return (
     <div>
       {/* {JSON.stringify(orderedKeys)} */}
-      { Object.values(orderedKeys).map((key) => {
+      { Object.values(orderedKeys).map((key, i) => {
           return (
             <ul>
               <h3>{key}</h3>
-              <li style={{ listStyle: "none" }}>
+              <li key={i} style={{ listStyle: "none" }}>
               {
-                unorderedData[key].map(place => {
+                unorderedData[key].map((place, i) => {
                   return place.status === "publish"
-                    ? <Link to={`/places/place/${place.Place_Lookup}`} style={{ display: "inline-block", padding: "0 7px" }}>{place.Place_Lookup}</Link>
+                    ? <Link key={i} to={`/places/place/${place.Place_Lookup}`} style={{ display: "inline-block", padding: "0 7px" }}>{place.Place_Lookup}</Link>
                     : ""
                 })
               }
