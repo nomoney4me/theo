@@ -1,10 +1,7 @@
-# React-Static - Basic Example
+# How to get started
 
-This example is the most basic version of react-static available. It includes:
-- Babel
-- CSS imports
-- Image imports
-- File imports
-- Automatic Routing
+To get started run: 
+- `npm install`
+- `AUTH=<key> npm start`
 
-To get started, run `react-static create` and use the `basic` template.
+The above should build a dev environment at `http://localhost:3000`
