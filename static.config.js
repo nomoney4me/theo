@@ -15,9 +15,10 @@ const client = new ApolloClient({
 const functions = {
   people: () => client.query({ query: gql`
     {
-      People {
+      People(status: "publish") {
         Name
         Person_Lookup
+        status
       }
     }
   `
@@ -25,7 +26,7 @@ const functions = {
   ,
   places: () => client.query({ query: gql`
     {
-      Places {
+      Places(status: "publish") {
         Place_Lookup
         Display_Title
         Has_been_here

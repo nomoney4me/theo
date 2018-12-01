@@ -36,3 +36,12 @@ nav a {
 .template a {
   padding: 0 5px;
 }
+
+.listItems li {
+  list-style: none;
+}
+
+.listItems a {
+  display: inline-block;
+  padding: 0 7px;
+}

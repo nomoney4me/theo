@@ -16,17 +16,17 @@ export default withRouteData((props) => {
   let orderedKeys = Object.keys(unorderedData).sort()
 
   return (
-    <div>
+    <div className="listItems">
       {/* {JSON.stringify(orderedKeys)} */}
-      { Object.values(orderedKeys).map((key, i) => {
+      { orderedKeys.map((key, i) => {
           return (
             <ul key={i}>
               <h3>{key}</h3>
-              <li style={{ listStyle: "none" }}>
+              <li>
               {
                 unorderedData[key].map((place, i) => {
                   return place.status === "publish"
-                    ? <Link key={i} to={`/places/place/${place.Place_Lookup}`} style={{ display: "inline-block", padding: "0 7px" }}>{place.Place_Lookup}</Link>
+                    ? <Link key={i} to={`/places/place/${place.Place_Lookup}`}>{place.Place_Lookup}</Link>
                     : ""
                 })
               }
